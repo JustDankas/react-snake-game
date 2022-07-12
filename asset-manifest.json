@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-snake-game/static/css/main.05e17e07.css",
+    "main.js": "/react-snake-game/static/js/main.4b602329.js",
+    "static/media/RulesOfNature.mp3": "/react-snake-game/static/media/RulesOfNature.6270e5179fec66996086.mp3",
+    "index.html": "/react-snake-game/index.html",
+    "main.05e17e07.css.map": "/react-snake-game/static/css/main.05e17e07.css.map",
+    "main.4b602329.js.map": "/react-snake-game/static/js/main.4b602329.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05e17e07.css",
+    "static/js/main.4b602329.js"
+  ]
+}
