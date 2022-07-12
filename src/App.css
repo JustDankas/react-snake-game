@@ -1,0 +1,39 @@
+.Board{
+  margin: auto;
+  border: 5px solid rgb(144, 196, 255);
+}
+
+.row{
+  display: flex;
+}
+
+.row .column{
+
+  
+  padding: 2rem;
+}
+.row .active{
+  background-color: rgb(19, 210, 19);
+  z-index: 2;
+}
+.row .non-active{
+  
+}
+.row .apple{
+  background-color: red;
+  z-index: -1;
+}
+.score{
+  font-size: 2rem;
+  text-align: center;
+  background-color: rgb(107, 136, 141);
+  font-weight: bold;
+  color: white;
+}
+.sliderange{
+  width: 100%;
+  text-align: center;
+}
+.sliderange input{
+  width: 100%;
+}
