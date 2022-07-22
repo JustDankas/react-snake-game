@@ -1,27 +1,25 @@
 import React, { Component, useEffect, useState } from 'react';
-import snakeSong from './RulesOfNature.mp3'
 import './App.css';
 const SPEED = .5;
 const MIN_SPEED = 3;
-const MAX_SPEED = 4;
-const BOARD_SIZE = 10;
+const MAX_SPEED = 7;
+const BOARD_SIZE = 15;
 const snake_Init = [[2,4]];
 const APPLE_POS = [7,7];
 
 const MOVES = ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'];
 
+let moveDirection = 'ArrowRight';
 function App() {
   const [board,setBoard] = useState(
     new Array(BOARD_SIZE).fill(0).map(cell=>new Array(BOARD_SIZE).fill(0))
   )
-  // const [audio] = useState(new Audio(snakeSong))
-  const audio = new Audio(snakeSong)
   const [snake,setSnake] = useState(snake_Init);
-  const [moveDirection,setMoveDirection] = useState("ArrowRight");
+  // const [moveDirection,setMoveDirection] = useState("ArrowRight");
   const [applePos,setApplePos] = useState(APPLE_POS);
   const [gameOver,setGameOver] = useState(false);
-  const [range,setRange] = useState(MAX_SPEED/10);
-  const [score,setScore] = useState(0);
+  const [range,setRange] = useState((MAX_SPEED/10));
+  const [score,setScore] = useState(1);
 
 
   const renderBoard = board.map((row,rowIndx)=>{
@@ -42,13 +40,11 @@ function App() {
     setBoard(new Array(BOARD_SIZE).fill(0).map(cell=>new Array(BOARD_SIZE).fill(0)))
     setGameOver(false)
     setScore(0)
-    audio.play()
   }
 
   useEffect(()=>{
     // GamerOver
   if(gameOver){
-    
     resetGame()
   }
 
@@ -72,7 +68,7 @@ function App() {
       setGameOver(true)
     }
     // If head out of bounds , game over
-    if(head[0]<0 || head[0]>9 || head[1]<0 || head[1]>9){
+    if(head[0]<0 || head[0]>BOARD_SIZE-1 || head[1]<0 || head[1]>BOARD_SIZE-1){
       setGameOver(true)
     }
     else{
@@ -82,6 +78,8 @@ function App() {
         setScore(prev=>prev+1)
         addLength = true;
         setApplePos(null);
+        const apple = document.querySelector('.apple')
+        apple.className = "column active"
       }
       snakePos.forEach((pos,index)=>{
         
@@ -114,7 +112,8 @@ function App() {
   window.addEventListener('keydown',e=>{
     const key = e.code
     if(MOVES.includes(key)){
-      setMoveDirection(key)
+      // setMoveDirection(key)
+      moveDirection = key
     }
   })
 

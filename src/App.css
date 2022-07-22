@@ -12,21 +12,51 @@
   
   padding: 2rem;
 }
+
+@keyframes snake-anim{
+  0%{
+    border-radius: 50%;
+  }
+  100%{
+    border-radius: 15%;
+    background-color: #42b883;
+  }
+}
+
 .row .active{
-  background-color: rgb(19, 210, 19);
+  background-color: #347474;
   z-index: 2;
+  animation-name: snake-anim;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+
 }
 .row .non-active{
   
 }
+@keyframes apple-anim{
+  0%{
+    border-radius: 10%;
+    box-shadow: 5px 5px #c51350;
+  }
+  100%{
+    border-radius: 50%;
+    
+  }
+}
 .row .apple{
-  background-color: red;
+  background-color: #eb2632;
   z-index: -1;
+  border-radius: 50%;
+  animation-name: apple-anim;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+
 }
 .score{
   font-size: 2rem;
   text-align: center;
-  background-color: rgb(107, 136, 141);
+  background-color: #35495e;
   font-weight: bold;
   color: white;
 }
