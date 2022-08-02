@@ -31,9 +31,7 @@
   animation-fill-mode: forwards;
 
 }
-.row .non-active{
-  
-}
+
 @keyframes apple-anim{
   0%{
     border-radius: 10%;
@@ -66,4 +64,25 @@
 }
 .sliderange input{
   width: 100%;
+}
+
+@media screen and (max-width:1920px) {
+  .row .column{
+    padding: 1.8rem;
+  }
+}
+
+@media screen and (max-width:1280px) {
+  .row .column{
+    padding: 1.2rem;
+  }
+}
+
+@media screen and (max-width:550px) {
+  .row .column{
+    padding: .7rem;
+  }
+  .score{
+    font-size: 1.5rem;
+  }
 }
