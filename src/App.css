@@ -1,88 +1,107 @@
-.Board{
+.Board {
   margin: auto;
-  border: 5px solid rgb(144, 196, 255);
+  border: 5px solid #e3e3e3;
+  position: relative;
+  /* background-color: #455d7a; */
+  border-radius: 2px;
 }
 
-.row{
+.row {
   display: flex;
 }
 
-.row .column{
-
-  
+.row .column {
   padding: 2rem;
 }
 
-@keyframes snake-anim{
-  0%{
+@keyframes snake-anim {
+  0% {
     border-radius: 50%;
   }
-  100%{
+  100% {
     border-radius: 15%;
     background-color: #42b883;
   }
 }
 
-.row .active{
+.row .active {
   background-color: #347474;
   z-index: 2;
   animation-name: snake-anim;
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   animation-fill-mode: forwards;
-
 }
 
-@keyframes apple-anim{
-  0%{
+@keyframes apple-anim {
+  0% {
     border-radius: 10%;
     box-shadow: 5px 5px #c51350;
   }
-  100%{
+  100% {
     border-radius: 50%;
-    
   }
 }
-.row .apple{
+.row .apple {
   background-color: #eb2632;
   z-index: -1;
   border-radius: 50%;
   animation-name: apple-anim;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-
 }
-.score{
+.score {
   font-size: 2rem;
   text-align: center;
-  background-color: #35495e;
+  background-color: #455d7a;
   font-weight: bold;
   color: white;
 }
-.sliderange{
+.sliderange {
   width: 100%;
   text-align: center;
 }
-.sliderange input{
+.sliderange input {
   width: 100%;
 }
 
-@media screen and (max-width:1920px) {
-  .row .column{
+@media screen and (max-width: 1920px) {
+  .row .column {
     padding: 1.8rem;
   }
 }
 
-@media screen and (max-width:1280px) {
-  .row .column{
+@media screen and (max-width: 1280px) {
+  .row .column {
     padding: 1.2rem;
   }
 }
 
-@media screen and (max-width:550px) {
-  .row .column{
-    padding: .7rem;
+@media screen and (max-width: 550px) {
+  .row .column {
+    padding: 0.7rem;
   }
-  .score{
+  .score {
     font-size: 1.5rem;
   }
+}
+
+.play-btn-c {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 45%;
+}
+
+.play-btn {
+  position: absolute;
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: #f95959;
+  color: #efefef;
 }
